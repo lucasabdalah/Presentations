@@ -1,4 +1,4 @@
-# CinC 2020 Presentation [here](https://github.com/lucasabdalah/I3S-Internship/blob/master/CinC%202020/Presentation/CinC2020.pdf)
+# UFC-ILMENAU 2022 Presentation [here](https://github.com/lucasabdalah/Presentations/blob/main/Seminar-UFC-ILMENAU-2022/latex/seminar-UFC-ILMENAU.pdf)
 
 Relevants points of the presentation:
 
@@ -57,6 +57,9 @@ Relevants points of the presentation:
         * Non fixed structure mixing the classical approach.
         * Penalization term and function g limiting the structure and number of blocks.
         * Estimation of the model parameters (R,Lr).
+        * Solutions where $\textbf{A}$, $\textbf{B}$ and $\textbf{C}$ have null columns will be induced allowing one to select the relevant low-rank blocks.
+        * This method is called group lasso and is a generalization of the the lasso estimator principle Yuan\_GLASSO\_2006.
+        * BCD consists in partitioning the set of optimization variables and sequentially solving convex subproblems in each subset of variables, fixing the others.
 
 ## AF Complexity Index (10/17)
     1) More poles, more complex it can be considered.

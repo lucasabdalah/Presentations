@@ -270,13 +270,13 @@
 		\begin{itemize}
 			\item Structured low-rank approximation (SRLA)
 			\item Geometric properties of the mixed $\ell_{2,1}$-norm allows one to select the relevant low-rank blocks.
-			% solutions where $\textbf{A}$, $\textbf{B}$ and $\textbf{C}$ have null columns will be induced,
-			\item Cadzow's Algorithm ensures Hankel Structure
-			% \item This method is called group lasso and is a generalization of the the lasso estimator principle Yuan\_GLASSO\_2006.
-			\item Since problem is nonconvex (and nonsmooth), but convex by blocks, a block coordinate descent (BCD) approach is employed in~\footnote{Goulart et al., ``Alternating group lasso for block-term tensor decomposition with application to ECG source separation'', in \textit{IEEE Transactions on Signal Processing}, vol. 68, pp. 2682-2696, 2020.}
-			% \item BCD consists in partitioning the set of optimization variables and sequentially solving convex subproblems in each subset of variables, fixing the others.
+			\item The problem is nonconvex (and nonsmooth), but convex by blocks, so a block coordinate descent (BCD) approach is employed\footnote{Goulart et al., ``Alternating group lasso for block-term tensor decomposition with application to ECG source separation'', in \textit{IEEE Transactions on Signal Processing}, vol. 68, pp. 2682-2696, 2020.}.			
+			\item Cadzow's Algorithm ensures Hankel Structure:
 		\end{itemize}
-		
+		\begin{equation}
+			\hat{\mathbf{H}}_r \approx \hat{\mathbf{A}}_r \hat{\mathbf{B}}^{\intercal}_r
+	 \end{equation}
+
 	\end{frame}
 
 	\begin{frame}{AF Complexity Index}
@@ -287,8 +287,12 @@
 		
 		\begin{itemize}
 			\item The complexity index proposed in this work is based on the number of poles $L_{r}$ contained in a signal. 
-			\item The Hankel matrix rank is equal to number of poles $L_{r}$.
+			\item The Hankel matrix $(\hat{\mathbf{H}}_r)$ rank is equal to number of poles $L_{r}$.
 		\end{itemize}
+		
+		\begin{block}{AA Hankel Matrix Rank}
+			Compute $rank(\hat{\mathbf{H}}_r)$ for the AA estimated block
+		\end{block}
 
 	\end{frame}
 	
@@ -347,26 +351,12 @@
 		\vspace{-0.5cm}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[scale=0.9]{figures/boxplot_complexity.pdf}
+			\includegraphics[scale=0.5]{figures/boxplot.pdf}
 		\end{figure}
 		\vspace{-0.5cm}
 		\begin{itemize}
 			\item 20 patients undergoing various CA steps
 			\item 59 ECG segments (1.06 $\pm$ 0.2 s)
-		\end{itemize}
-	\end{frame}
-
-	\begin{frame}{Impact of PVI on AA complexity}
-
-		\vspace{-0.5cm}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=0.9]{figures/boxplot_PVI.pdf}
-		\end{figure}
-		\vspace{-0.5cm}
-		\begin{itemize}
-			\item 17 patients undergoing PVI
-			\item 34 ECG segments
 		\end{itemize}
 	\end{frame}
 
@@ -384,6 +374,28 @@
 				\item 18 patients with complete follow-up information
 			\end{itemize}
 		\end{block}	
+	\end{frame}
+
+	\begin{frame}{AF Recurrence vs. Complexity Before CA}
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.4]{figures/LR_2scenarios.pdf}
+		\end{figure}
+	\end{frame}
+
+	\begin{frame}{Impact of PVI on AA complexity}
+
+		\vspace{-0.5cm}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=0.9]{figures/boxplot_PVI.pdf}
+		\end{figure}
+		\vspace{-0.5cm}
+		\begin{itemize}
+			\item 17 patients undergoing PVI
+			\item 34 ECG segments
+		\end{itemize}
 	\end{frame}
 
 %% ------------------------- Conclusion ---------------------------------------
